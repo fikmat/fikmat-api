@@ -57,5 +57,5 @@ Vibration lasts 150 ms by default. If you need it to last longer, you will have 
 
 ## Wrappers for common game engines
 
-- Godot ➜ https://github.com/fikmatt/fikmat-api-wrapper-godot
-- Unity ➜ https://github.com/fikmatt/fikmat-api-wrapper-unity
+- Godot ➜ https://github.com/fikmat/fikmat-api-wrapper-godot
+- Unity ➜ https://github.com/fikmat/fikmat-api-wrapper-unity
