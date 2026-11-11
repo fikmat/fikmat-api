@@ -12,11 +12,6 @@ const api = require('./lib/api.js');
 
 app.use(express.json());
 
-const jsonErrorHandler = (err, req, res, next) => {
-  res.status(500).send({ error: err });
-}
-app.use(jsonErrorHandler);
-
 const rateLimit = require("express-rate-limit")
 const limiter = rateLimit({
   windowMs: 1000 / 10,
@@ -35,6 +30,16 @@ app.post('/api', (req, res) => {
 
   res.sendStatus(200);
 });
+
+const jsonErrorHandler = (err, req, res, next) => {
+  const status = err.status || err.statusCode || 500;
+  if (status >= 500) {
+    console.error(err);
+  }
+  const message = status < 500 ? err.message : 'Internal Server Error';
+  res.status(status).send({ error: message });
+}
+app.use(jsonErrorHandler);
 
 api.on('ready', () => {
   server.listen(port, () => {
