@@ -1,6 +1,9 @@
 {
   "name": "fikmat-api",
   "version": "0.1",
+  "engines": {
+    "node": ">=24 <25"
+  },
   "scripts": {
     "start": "node app.js",
     "dev": "NODE_ENV=development DEBUG=fikmat-api:* nodemon app.js"
@@ -14,5 +17,8 @@
   },
   "devDependencies": {
     "nodemon": "^3"
+  },
+  "overrides": {
+    "nan": "^2.23.0"
   }
 }

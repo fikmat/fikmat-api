@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 const express = require('express');
-const bodyParser = require('body-parser');
 const debug = require('debug')('fikmat-api:server');
 
 const app = express();
